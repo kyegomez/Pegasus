@@ -2,7 +2,7 @@
 
 ![Pegasus Banner](./assets/banner.png)
 
-Welcome to Pegasus, the latest and most advanced framework for creating high-quality embeddings from multimodal data. We're pushing the boundaries of what's possible with machine learning, enabling tasks and applications that were once mere visions of the future.
+Welcome to Pegasus, the latest and most advanced model for creating high-quality embeddings from multimodal data. We're pushing the boundaries of what's possible with machine learning, enabling tasks and applications that were once mere visions of the future.
 
 In essence, Pegasus is designed to transform the way we look at data. Our aim is to make it easier for anyone, regardless of their domain or discipline, to generate task-specific, high-quality embeddings from any type of data, be it text, image, video, audio, or even more complex data types.
 
