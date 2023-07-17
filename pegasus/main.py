@@ -1,12 +1,13 @@
 from concurrent.futures import ProcessPoolExecutor, as_completed
 # from numba import njit
 # from joblib import Memory
+
 import numpy as np
 from pegasus.embedding_functions import MultiModalEmbeddingFunction
 import logging
 
+#potential optimizationd
 # memory = Memory("PegasusStore", verbose=0)
-
 # @memory.cache
 # # @njit
 
@@ -42,16 +43,24 @@ class Pegasus:
         multi_process: A boolean indicating if multiprocessing will be enabled
         n_processes: An integer indicating that the number of processes to use
     """
-    def __init__(self, modality, multi_process=False, n_processes=4, hosted=False):
-        if modality not in {"text", "audio", "vision", "sensor", "heatmap"}:
+    def __init__(self, modality, multi_process=False, n_processes=1, hosted=False):
+        if not isinstance(modality, str) or modality not in {"text", "audio", "vision", "sensor", "heatmap"}:
             logger.error(f"Invalid modality: {modality}")
             raise ValueError("Invalid modality")
+
+        if not isinstance(multi_process, bool):
+            logger.error(f"Invalid multi_process value: {multi_process}")
+            raise ValueError("multi_process should be a boolean")
+
+        if not isinstance(n_processes, int) or n_processes < 1:
+            logger.error(f"Invalid n_processes value: {n_processes}")
+            raise ValueError("n_processes should be a positive integer")
         
         self.modality = modality
-        self.multi_process = multi_process
-        self.n_processes = n_processes if multi_process else 1
-        self.hosted = False #if you want to use the paid api verison, 
-        
+        self.multi_process = multi_process and n_processes > 1
+        self.n_processes = n_processes
+        self.hosted = False
+
     def _embed_data(self, data):
         """
         Embeds the data using MultiModalEmbeddingFunction 
@@ -90,12 +99,13 @@ class Pegasus:
         if not self.multi_process:
             return self._embed_data(data)
         
-        try:
-            with ProcessPoolExecutor(max_workers=self.n_processes) as executor:
-                future_to_data = {executor.submit(self._embed_data, d): d for d in data}
-                return {future_to_data[future]: future.result() for future in as_completed(future_to_data)}
-        except Exception as e:
-            logger.error(f"Failed to embed data in parallel: {str(e)}")
-            raise
-            
-
+        if self.multi_process:
+            try:
+                with ProcessPoolExecutor(max_workers=self.n_processes) as executor:
+                    future_to_data = {executor.submit(self._embed_data, d): d for d in data}
+                    return {future_to_data[future]: future.result() for future in as_completed(future_to_data)}
+            except Exception as e:
+                logger.error(f"Failed to embed data in parallel: {str(e)}")
+                raise
+        else:
+            return self._embed_data(data)
