@@ -12,7 +12,7 @@ from pegasus.main import Pegasus
 
 
 # Using 4 processes
-pegasus = Pegasus(modality="text", multi_process=True, n_processes=4)
+pegasus = Pegasus(modality="text")
 text_data = ['This is a query about artificial intelligence', 
              'Another query about machine learning',
              'Yet another query about deep learning',
