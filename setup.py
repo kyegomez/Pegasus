@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 # 
 
 setup(
-  name = 'pegasus',
+  name = 'pegasusX',
   packages = find_packages(exclude=[]),
   version = '0.1.0',
   license='MIT',
