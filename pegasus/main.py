@@ -33,3 +33,5 @@ class Pegasus:
         with ProcessPoolExecutor(max_workers=self.n_processes) as executor:
             future_to_data = {executor.submit(self._embed_data, d): d for d in data}
             return {future_to_data[future]: future.result() for future in as_completed(future_to_data)}
+        
+
