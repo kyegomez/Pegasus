@@ -1,2 +1,2 @@
 import logging
-from pegasus.oceandb.utils.embedding_functions import MultiModalEmbeddingFunction
+from pegasus.oceandb.utils import MultiModalEmbeddingFunction
