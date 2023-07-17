@@ -42,7 +42,7 @@ class Pegasus:
         multi_process: A boolean indicating if multiprocessing will be enabled
         n_processes: An integer indicating that the number of processes to use
     """
-    def __init__(self, modality, multi_process=False, n_processes=4):
+    def __init__(self, modality, multi_process=False, n_processes=4, hosted=False):
         if modality not in {"text", "audio", "vision", "sensor", "heatmap"}:
             logger.error(f"Invalid modality: {modality}")
             raise ValueError("Invalid modality")
@@ -50,6 +50,7 @@ class Pegasus:
         self.modality = modality
         self.multi_process = multi_process
         self.n_processes = n_processes if multi_process else 1
+        self.hosted = False #if you want to use the paid api verison, 
         
     def _embed_data(self, data):
         """
