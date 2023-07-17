@@ -1,9 +1,9 @@
 from . import config
 import logging
-from oceandb.telemetry.events import ClientStartEvent
-from oceandb.telemetry.posthog import Posthog
+from pegasus.oceandb.telemetry.events import ClientStartEvent
+from pegasus.oceandb.telemetry.posthog import Posthog
 
-from oceandb.utils.embedding_functions import ImageBindEmbeddingFunction
+from pegasus.oceandb.utils.embedding_functions import ImageBindEmbeddingFunction
 
 logger = logging.getLogger(__name__)
 
