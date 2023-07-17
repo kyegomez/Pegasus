@@ -8,7 +8,7 @@
 [![GitHub license](https://img.shields.io/github/license/kyegomez/Pegasus)](https://github.com/kyegomez/Pegasus/blob/main/LICENSE)
 [![GitHub star chart](https://img.shields.io/github/stars/kyegomez/Pegasus?style=social)](https://star-history.com/#kyegomez/Pegasus)
 [![Dependency Status](https://img.shields.io/librariesio/github/kyegomez/Pegasus)](https://libraries.io/github/kyegomez/Pegasus)
-[![Downloads](https://static.pepy.tech/badge/Pegasusx/month)](https://pepy.tech/project/Pegasus)
+[![Downloads](https://static.pepy.tech/badge/pegasusx/month)](https://pepy.tech/project/pegasusx)
 
 ### Share on Social Media
 
@@ -25,7 +25,7 @@
 
 Welcome to PegasusX, the latest and most advanced package for creating high-quality embeddings from multimodal data. We're pushing the boundaries of what's possible with machine learning, enabling tasks and applications that were once mere visions of the future.
 
-In essence, PegasusX is designed to transform the way we look at data. Our aim is to make it easier for anyone, regardless of their domain or discipline, to generate task-specific, high-quality embeddings from any type of data, be it text, image, video, audio, or even more complex data types.
+In essence, PegasusX is designed to transform the way we look at data. Our aim is to make it easier for anyone, regardless of their domain or discipline, to generate task-specific, high-quality embeddings from any type of data, be it text, image, video, audio, or even more complex data types..
 
 
 ## Installation
