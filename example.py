@@ -1,14 +1,14 @@
 from pegasus.main import Pegasus
 
-# initialize with text modality
-pegasus_text = Pegasus(modality="text")
-text_data = ['This is a query about artificial intelligence']
-embeddings_text = pegasus_text.embed_text(text_data)
+# # initialize with text modality
+# pegasus_text = Pegasus(modality="text")
+# text_data = ['This is a query about artificial intelligence']
+# embeddings_text = pegasus_text.embed_text(text_data)
 
-# initialize with audio modality
-pegasus_audio = Pegasus(modality="audio")
-audio_data = [...]  # Your audio data here => audio file apth
-embeddings_audio = pegasus_audio.embed_audio(audio_data)
+# # initialize with audio modality
+# pegasus_audio = Pegasus(modality="audio")
+# audio_data = [...]  # Your audio data here => audio file apth
+# embeddings_audio = pegasus_audio.embed_audio(audio_data)
 
 
 # Using 4 processes
