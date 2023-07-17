@@ -1,3 +1,5 @@
+from pegasus.main import Pegasus
+
 # initialize with text modality
 pegasus_text = Pegasus(modality="text")
 text_data = ['This is a query about artificial intelligence']
