@@ -1,3 +1,9 @@
+<div align="center">
+
+
+</div>
+
+
 # PegasusX: The Future of Multimodal Embeddings 🦄 🦄 
 
 ![Pegasus Banner](stable-diffusion-xl.jpeg)
