@@ -105,4 +105,7 @@ PegasusX is a constant work in progress, and we're always striving for better. O
 
 * **Parallelization, Asynchrony, and Other Optimizations:** To ensure seamless operation even with large amounts of data, we're planning to implement parallelization, asynchronous operations, and other optimizations in the model.
 
+* Remake in Jax using dynamic sparse flash attention
+
 Thank you for considering contributing to PegasusX. Your expertise and commitment to this project are what make it thrive. Let's build the future of multimodal embeddings together.
+

@@ -5,7 +5,7 @@ from abc import ABC, abstractmethod
 import torch.nn as nn
 
 # from ..utils.ImageBind.imagebind_model import ModalityType
-from pegasus.ImageBind.models.imagebind_model import ModalityType
+from pegasus.ImageBind import ModalityType
 
 import numpy as np
 
