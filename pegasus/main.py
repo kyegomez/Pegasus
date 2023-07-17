@@ -1,14 +1,14 @@
 from concurrent.futures import ProcessPoolExecutor, as_completed
-from numba import njit
-from joblib import Memory
+# from numba import njit
+# from joblib import Memory
 import numpy as np
 
 from pegasus.embedding_functions import MultiModalEmbeddingFunction
 
-memory = Memory("PegasusStore", verbose=0)
+# memory = Memory("PegasusStore", verbose=0)
 
-@memory.cache
-@njit
+# @memory.cache
+# # @njit
 def optimized_embedding_function(modality, data):
     return MultiModalEmbeddingFunction(modality)(data)
 
