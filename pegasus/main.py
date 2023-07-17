@@ -4,14 +4,14 @@ from joblib import Memory
 import numpy as np
 
 # from pegasus.Ocean import ImageBindEmbeddingFunctio
-from pegasus.oceandb import ImageBindEmbeddingFunction
+from pegasus.oceandb import MultiModalEmbeddingFunction
 
 memory = Memory("PegasusStore", verbose=0)
 
 @memory.cache
 @njit
 def optimized_embedding_function(modality, data):
-    return ImageBindEmbeddingFunction(modality)(data)
+    return MultiModalEmbeddingFunction(modality)(data)
 
 class Pegasus:
     def __init__(self, modality, multi_process=False, n_processes=4):
