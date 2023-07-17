@@ -1,4 +1,4 @@
-# PegasusX: The Future of Multimodal Embeddings
+# PegasusX: The Future of Multimodal Embeddings 🦄 🦄 
 
 ![Pegasus Banner](./assets/banner.png)
 
