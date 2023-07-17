@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
   name = 'pegasusX',
   packages = find_packages(exclude=[]),
-  version = '0.1.7',
+  version = '0.1.9',
   license='MIT',
   description = 'pegasus - Pytorch',
   author = 'Kye Gomez',
