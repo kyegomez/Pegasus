@@ -110,3 +110,11 @@ Our roadmap doesn't stop with finetuning. As we move forward, we're excited to e
 6. **Production-Level API Deployment:** Pegasus will enter Agora's paid API line up so you can effortlessly make API requests and recieve your embeddings no complicated setup necessary
 
 As we continue our journey, we invite you to join us. Let's create the best SOTA omni-modality embeddings model together. Welcome to the future with Pegasus.
+
+
+
+# Roadmap
+
+* Make it extremely fast through quantization
+
+* Parrelization, ASYNCHORNNY + other optimizations
