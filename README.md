@@ -37,11 +37,53 @@ In essence, PegasusX is designed to transform the way we look at data. Our aim i
 
 
 ## Installation
+
+Sure, here is the modified section including installation instructions using `git clone`:
+
+# Git Clone Installation
+
+There are 2 methods of installation. Currently, we're experiencing some path errors with pip installation. For a smooth installation, we recommend using git clone:
+
+```bash
+git clone https://github.com/kyegomez/Pegasus.git
+cd Pegasus
+pip install -r requirements.txt
+```
+
+To validate your installation, you can run the provided example:
+
+```bash
+python3 example.py
+```
+
+## Usage
+
+```python
+from pegasus import Pegasus
+
+# For video and audio modalities, you can initialize the Pegasus class with "Pegasus('vision')" or "Pegasus('audio')" respectively, then pass in the file path of the vision or audio data
+pegasus = Pegasus("text", multi_process=False, n_processes=4)
+
+text_data = [
+    'This is a query about artificial intelligence',
+    'Another query about machine learning',
+    'Yet another query about deep learning',
+    'And one more about natural language processing'
+]
+
+embeddings = pegasus.embed_data(text_data)
+
+print(embeddings)
+```
+
+## Pip Installation
+Please help us with this file path errors, they are very annoying.
+
 ```bash
 pip install pegasusx
 ```
 
-## Usage
+## Pip Usage
 
 ```python
 from pegasus import Pegasus
