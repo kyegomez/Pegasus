@@ -1,4 +1,4 @@
-from pegasus.oceandb.api import Documents, EmbeddingFunction, Embeddings
+from oceandb.api.types import Documents, EmbeddingFunction, Embeddings
 from typing import Optional
 import torch
 
@@ -6,24 +6,6 @@ from .ImageBind.models import imagebind_model
 from .ImageBind.models.imagebind_model import ModalityType
 from .ImageBind.data import load_and_transform_text, load_and_transform_vision_data, load_and_transform_audio_data
 
-class SentenceTransformerEmbeddingFunction(EmbeddingFunction):
-    models = {}
-
-    # If you have a beefier machine, try "gtr-t5-large".
-    # for a full list of options: https://huggingface.co/sentence-transformers, https://www.sbert.net/docs/pretrained_models.html
-    def __init__(self, model_name: str = "all-MiniLM-L6-v2"):
-        if model_name not in self.models:
-            try:
-                from sentence_transformers import SentenceTransformer
-            except ImportError:
-                raise ValueError(
-                    "The sentence_transformers python package is not installed. Please install it with `pip install sentence_transformers`"
-                )
-            self.models[model_name] = SentenceTransformer(model_name)
-        self._model = self.models[model_name]
-
-    def __call__(self, texts: Documents) -> Embeddings:
-        return self._model.encode(list(texts), convert_to_numpy=True).tolist()
 #
 class ImageBindEmbeddingFunction(EmbeddingFunction):
     def __init__(
@@ -162,48 +144,3 @@ class HuggingFaceEmbeddingFunction(EmbeddingFunction):
             self._api_url, json={"inputs": texts, "options": {"wait_for_model": True}}
         ).json()
 
-
-class InstructorEmbeddingFunction(EmbeddingFunction):
-    # If you have a GPU with at least 6GB try model_name = "hkunlp/instructor-xl" and device = "cuda"
-    # for a full list of options: https://github.com/HKUNLP/instructor-embedding#model-list
-    def __init__(self, model_name: str = "hkunlp/instructor-base", device="cpu"):
-        try:
-            from InstructorEmbedding import INSTRUCTOR
-        except ImportError:
-            raise ValueError(
-                "The InstructorEmbedding python package is not installed. Please install it with `pip install InstructorEmbedding`"
-            )
-        self._model = INSTRUCTOR(model_name, device=device)
-
-    def __call__(self, texts: Documents) -> Embeddings:
-        return self._model.encode(texts).tolist()
-
-
-class GooglePalmEmbeddingFunction(EmbeddingFunction):
-    """To use this EmbeddingFunction, you must have the google.generativeai Python package installed and have a PaLM API key."""
-
-    def __init__(self, api_key: str, model_name: str = "models/embedding-gecko-001"):
-        if not api_key:
-            raise ValueError("Please provide a PaLM API key.")
-
-        if not model_name:
-            raise ValueError("Please provide the model name.")
-
-        try:
-            import google.generativeai as palm
-        except ImportError:
-            raise ValueError(
-                "The Google Generative AI python package is not installed. Please install it with `pip install google-generativeai`"
-            )
-
-        palm.configure(api_key=api_key)
-        self._palm = palm
-        self._model_name = model_name
-
-    def __call__(self, texts: Documents) -> Embeddings:
-        return [
-            self._palm.generate_embeddings(model=self._model_name, text=text)[
-                "embedding"
-            ]
-            for text in texts
-        ]
