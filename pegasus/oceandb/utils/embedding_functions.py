@@ -1,6 +1,7 @@
-from pegasus.oceandb.api.types import Documents, EmbeddingFunction, Embeddings
+from pegasus.oceandb.api import Documents, EmbeddingFunction, Embeddings
 from typing import Optional
 import torch
+
 from .ImageBind.models import imagebind_model
 from .ImageBind.models.imagebind_model import ModalityType
 from .ImageBind.data import load_and_transform_text, load_and_transform_vision_data, load_and_transform_audio_data
