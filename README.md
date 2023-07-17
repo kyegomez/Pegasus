@@ -1,10 +1,32 @@
 # PegasusX: The Future of Multimodal Embeddings 🦄 🦄 
 
-![Pegasus Banner](./assets/banner.png)
+<div align="center">
+
+[![GitHub issues](https://img.shields.io/github/issues/kyegomez/Pegasus)](https://github.com/kyegomez/Pegasus/issues)
+[![GitHub forks](https://img.shields.io/github/forks/kyegomez/Pegasus)](https://github.com/kyegomez/Pegasus/network)
+[![GitHub stars](https://img.shields.io/github/stars/kyegomez/Pegasus)](https://github.com/kyegomez/Pegasus/stargazers)
+[![GitHub license](https://img.shields.io/github/license/kyegomez/Pegasus)](https://github.com/kyegomez/Pegasus/blob/main/LICENSE)
+[![GitHub star chart](https://img.shields.io/github/stars/kyegomez/Pegasus?style=social)](https://star-history.com/#kyegomez/Pegasus)
+[![Dependency Status](https://img.shields.io/librariesio/github/kyegomez/Pegasus)](https://libraries.io/github/kyegomez/Pegasus)
+[![Downloads](https://static.pepy.tech/badge/Pegasus/month)](https://pepy.tech/project/Pegasus)
+
+### Share on Social Media
+
+[![Twitter](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fkyegomez%2FPegasus)](https://twitter.com/intent/tweet?text=Check%20out%20this%20amazing%20project%20on%20GitHub%3A%20&url=https%3A%2F%2Fgithub.com%2Fkyegomez%2FPegasus)
+[![Facebook](https://img.shields.io/badge/Share-Facebook-blue)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2Fkyegomez%2FPegasus)
+[![LinkedIn](https://img.shields.io/badge/Share-LinkedIn-blue)](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgithub.com%2Fkyegomez%2FPegasus&title=&summary=&source=)
+[![Reddit](https://img.shields.io/badge/-Share%20on%20Reddit-orange)](https://www.reddit.com/submit?url=https%3A%2F%2Fgithub.com%2Fkyegomez%2FPegasus&title=PegasusX%20-%20The%20Future%20of%20Multimodal%20Embeddings)
+[![Hacker News](https://img.shields.io/badge/-Share%20on%20Hacker%20News-orange)](https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fgithub.com%2Fkyegomez%2FPegasus&t=PegasusX%20-%20The%20Future%20of%20Multimodal%20Embeddings)
+[![Pinterest](https://img.shields.io/badge/-Share%20on%20Pinterest-red)](https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fgithub.com%2Fkyegomez%2FPegasus&media=https%3A%2F%2Fexample.com%2Fimage.jpg&description=PegasusX%20-%20The%20Future%20of%20Multimodal%20Embeddings)
+[![WhatsApp](https://img.shields.io/badge/-Share%20on%20WhatsApp-green)](https://api.whatsapp.com/send?text=Check%20out%20PegasusX%20-%20The%20Future%20of%20Multimodal%20Embeddings%20%23Pegasus%20%23AI%0A%0Ahttps%3A%2F%2Fgithub.com%2Fkyegomez%2FPegasus)
+
+</div>
+
 
 Welcome to PegasusX, the latest and most advanced package for creating high-quality embeddings from multimodal data. We're pushing the boundaries of what's possible with machine learning, enabling tasks and applications that were once mere visions of the future.
 
 In essence, PegasusX is designed to transform the way we look at data. Our aim is to make it easier for anyone, regardless of their domain or discipline, to generate task-specific, high-quality embeddings from any type of data, be it text, image, video, audio, or even more complex data types.
+
 
 ## Installation
 ```bash
