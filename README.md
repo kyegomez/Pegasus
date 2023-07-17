@@ -1,5 +1,7 @@
 # PegasusX: The Future of Multimodal Embeddings 🦄 🦄 
 
+![Pegasus Banner](stable-diffusion-xl.jpeg)
+
 <div align="center">
 
 [![GitHub issues](https://img.shields.io/github/issues/kyegomez/Pegasus)](https://github.com/kyegomez/Pegasus/issues)
