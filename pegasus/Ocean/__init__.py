@@ -1,0 +1,1 @@
+from pegasus.Ocean.oceandb.utils.embedding_functions import ImageBindEmbeddingFunction
