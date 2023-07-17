@@ -8,7 +8,7 @@
 [![GitHub license](https://img.shields.io/github/license/kyegomez/Pegasus)](https://github.com/kyegomez/Pegasus/blob/main/LICENSE)
 [![GitHub star chart](https://img.shields.io/github/stars/kyegomez/Pegasus?style=social)](https://star-history.com/#kyegomez/Pegasus)
 [![Dependency Status](https://img.shields.io/librariesio/github/kyegomez/Pegasus)](https://libraries.io/github/kyegomez/Pegasus)
-[![Downloads](https://static.pepy.tech/badge/Pegasus/month)](https://pepy.tech/project/Pegasus)
+[![Downloads](https://static.pepy.tech/badge/Pegasusx/month)](https://pepy.tech/project/Pegasus)
 
 ### Share on Social Media
 
