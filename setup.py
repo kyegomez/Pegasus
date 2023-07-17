@@ -1,10 +1,9 @@
 from setuptools import setup, find_packages
-# 
 
 setup(
   name = 'pegasusX',
   packages = find_packages(exclude=[]),
-  version = '0.2.5',
+  version = '0.2.6',
   license='MIT',
   description = 'pegasus - Pytorch',
   author = 'Kye Gomez',
@@ -17,10 +16,26 @@ setup(
     'optimizers',
     "Prompt Engineering"
   ],
-    install_requires=[
-        'numba',
-        'joblib',
-    ],
+  install_requires=[
+    'hnswlib==0.7.0',
+    'pandas==1.3.5',
+    'pydantic==1.9.0',
+    'requests==2.28.1',
+    'typing_extensions==4.5.0',
+    'uvicorn[standard]==0.18.3',
+    'torch',
+    'torchvision',
+    'torchaudio',
+    'pytorchvideo @ git+https://github.com/facebookresearch/pytorchvideo.git@28fe037d212663c6a24f373b94cc5d478c8c1a1d',
+    'timm==0.6.7',
+    'ftfy',
+    'regex',
+    'einops',
+    'fvcore',
+    'decord==0.6.0',
+    'numba',
+    'joblib',
+  ],
   classifiers=[
     'Development Status :: 4 - Beta',
     'Intended Audience :: Developers',
