@@ -14,7 +14,7 @@ pip install pegasusx
 ## Usage
 
 ```python
-from pegasusx import Pegasus
+from pegasus import Pegasus
 
 # for video, audio do "Pegasus('vision'), Pegasus("audio") respectively then pass in the file path of the vision or audio data
 pegasus = Pegasus("text", multi_process=False, n_processes=4)
