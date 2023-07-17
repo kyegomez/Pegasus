@@ -14,9 +14,10 @@ pip install pegasusx
 ## Usage
 
 ```python
-from pegasusx import PegasusX
+from pegasusx import Pegasus
 
-pegasus = PegasusX("text", multi_process=False, n_processes=4)
+# for video, audio do "Pegasus('vision'), Pegasus("audio") respectively then pass in the file path of the vision or audio data
+pegasus = Pegasus("text", multi_process=False, n_processes=4)
 
 text_data = ['This is a query about artificial intelligence',
              'Another query about machine learning',
