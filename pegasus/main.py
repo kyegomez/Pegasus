@@ -3,7 +3,8 @@ from numba import njit
 from joblib import Memory
 import numpy as np
 
-from pegasus.Ocean import ImageBindEmbeddingFunction
+# from pegasus.Ocean import ImageBindEmbeddingFunctio
+from pegasus.oceandb import ImageBindEmbeddingFunction
 
 memory = Memory("PegasusStore", verbose=0)
 

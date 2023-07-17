@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-docker build . --target ocean_server -t ghcr.io/ocean-core/ocean-server:`bin/version`
