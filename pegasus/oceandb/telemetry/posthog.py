@@ -1,8 +1,8 @@
 import posthog
 import logging
 import sys
-from oceandb.config import Settings
-from oceandb.telemetry import Telemetry, TelemetryEvent
+import pegasus.oceandb.config import Settings
+import pegasus.oceandb.telemetry import Telemetry, TelemetryEvent
 
 logger = logging.getLogger(__name__)
 

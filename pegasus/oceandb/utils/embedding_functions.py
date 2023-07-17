@@ -1,4 +1,4 @@
-from oceandb.api.types import Documents, EmbeddingFunction, Embeddings
+import pegasus.oceandb.api.types import Documents, EmbeddingFunction, Embeddings
 from typing import Optional
 import torch
 from .ImageBind.models import imagebind_model

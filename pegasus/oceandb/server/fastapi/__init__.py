@@ -7,15 +7,15 @@ from fastapi.routing import APIRoute
 from fastapi import HTTPException, status
 from uuid import UUID
 
-import oceandb
-import oceandb.server
-import oceandb.api
-from oceandb.errors import (
+import pegasus.oceandb
+import pegasus.oceandb.server
+import pegasus.oceandb.api
+import pegasus.oceandb.errors import (
     OceanError,
     InvalidUUIDError,
     InvalidDimensionException,
 )
-from oceandb.server.fastapi.types import (
+import pegasus.oceandb.server.fastapi.types import (
     AddEmbedding,
     DeleteEmbedding,
     GetEmbedding,
@@ -28,7 +28,7 @@ from oceandb.server.fastapi.types import (
 from starlette.requests import Request
 
 import logging
-from oceandb.telemetry import ServerContext, Telemetry
+import pegasus.oceandb.telemetry import ServerContext, Telemetry
 
 logger = logging.getLogger(__name__)
 

@@ -1,9 +1,9 @@
 import pytest
 import logging
 import hypothesis.strategies as st
-import oceandb.test.property.strategies as strategies
-from oceandb.api import API
-import oceandb.api.types as types
+import pegasus.oceandb.test.property.strategies as strategies
+import pegasus.oceandb.api import API
+import pegasus.oceandb.api.types as types
 from hypothesis.stateful import (
     Bundle,
     RuleBasedStateMachine,

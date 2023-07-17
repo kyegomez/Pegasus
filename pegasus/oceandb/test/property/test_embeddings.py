@@ -3,10 +3,10 @@ import logging
 import hypothesis.strategies as st
 from typing import Set
 from dataclasses import dataclass
-import oceandb.errors as errors
-from oceandb.api import API
-from oceandb.api.models.Collection import Collection
-import oceandb.test.property.strategies as strategies
+import pegasus.oceandb.errors as errors
+import pegasus.oceandb.api import API
+import pegasus.oceandb.api.models.Collection import Collection
+import pegasus.oceandb.test.property.strategies as strategies
 from hypothesis.stateful import (
     Bundle,
     RuleBasedStateMachine,
@@ -19,7 +19,7 @@ from hypothesis.stateful import (
     invariant,
 )
 from collections import defaultdict
-import oceandb.test.property.invariants as invariants
+import pegasus.oceandb.test.property.invariants as invariants
 
 
 traces = defaultdict(lambda: 0)

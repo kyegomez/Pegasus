@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from typing import Callable, Sequence, Optional, Dict
 import pandas as pd
 from uuid import UUID
-from oceandb.api.models.Collection import Collection
-from oceandb.api.types import (
+import pegasus.oceandb.api.models.Collection import Collection
+import pegasus.oceandb.api.types import (
     Documents,
     Embeddings,
     IDs,
@@ -15,7 +15,7 @@ from oceandb.api.types import (
     WhereDocument,
 )
 
-from oceandb.telemetry import Telemetry
+import pegasus.oceandb.telemetry import Telemetry
 
 
 class API(ABC):

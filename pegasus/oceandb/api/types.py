@@ -1,6 +1,6 @@
 from typing import Optional, Union, Dict, Sequence, TypeVar, List
 from typing_extensions import Literal, TypedDict, Protocol
-import oceandb.errors as errors
+import pegasus.oceandb.errors as errors
 from abc import ABC, abstractmethod
 import torch.nn as nn
 

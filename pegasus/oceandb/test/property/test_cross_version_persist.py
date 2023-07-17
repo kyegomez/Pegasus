@@ -9,15 +9,15 @@ import hypothesis.strategies as st
 import pytest
 import json
 from urllib import request
-from oceandb.api import API
-import oceandb.test.property.strategies as strategies
-import oceandb.test.property.invariants as invariants
+import pegasus.oceandb.api import API
+import pegasus.oceandb.test.property.strategies as strategies
+import pegasus.oceandb.test.property.invariants as invariants
 from importlib.util import spec_from_file_location, module_from_spec
 from packaging import version as packaging_version
 import re
 import multiprocessing
-from oceandb import Client
-from oceandb.config import Settings
+import pegasus.oceandb import Client
+import pegasus.oceandb.config import Settings
 
 MINIMUM_VERSION = "0.3.20"
 COLLECTION_NAME_LOWERCASE_VERSION = "0.3.21"

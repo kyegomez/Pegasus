@@ -1,10 +1,10 @@
 import math
-from oceandb.test.property.strategies import RecordSet
+import pegasus.oceandb.test.property.strategies import RecordSet
 from typing import Callable, Optional, Union, List, TypeVar
 from typing_extensions import Literal
 import numpy as np
-from oceandb.api import types
-from oceandb.api.models.Collection import Collection
+import pegasus.oceandb.api import types
+import pegasus.oceandb.api.models.Collection import Collection
 from hypothesis import note
 from hypothesis.errors import InvalidArgument
 

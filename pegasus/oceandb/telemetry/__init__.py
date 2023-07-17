@@ -5,9 +5,9 @@ from typing import Callable, ClassVar
 import uuid
 import time
 from threading import Event, Thread
-import oceandb
+import pegasus.oceandb
 from pathlib import Path
-from oceandb.config import TELEMETRY_WHITELISTED_SETTINGS, Settings
+import pegasus.oceandb.config import TELEMETRY_WHITELISTED_SETTINGS, Settings
 from enum import Enum
 
 

@@ -1,6 +1,6 @@
 from typing import Callable, Dict, List, Optional
-from oceandb.api import API
-from oceandb.api.types import (
+import pegasus.oceandb.api import API
+import pegasus.oceandb.api.types import (
     CrossModalRetrieval,
     Documents,
     Embeddings,
@@ -17,9 +17,9 @@ import pandas as pd
 import requests
 import json
 from typing import Sequence, List, Any
-from oceandb.api.models.Collection import Collection
-from oceandb.telemetry import Telemetry
-import oceandb.errors as errors
+import pegasus.oceandb.api.models.Collection import Collection
+import pegasus.oceandb.telemetry import Telemetry
+import pegasus.oceandb.errors as errors
 from uuid import UUID
 
 

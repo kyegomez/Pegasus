@@ -1,7 +1,7 @@
-from oceandb.config import Settings
-from oceandb import Client
-from oceandb.api import API
-import oceandb.server.fastapi
+import pegasus.oceandb.config import Settings
+import pegasus.oceandb import Client
+import pegasus.oceandb.api import API
+import pegasus.oceandb.server.fastapi
 from requests.exceptions import ConnectionError
 import hypothesis
 import tempfile

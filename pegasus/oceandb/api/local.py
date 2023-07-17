@@ -2,11 +2,11 @@ import json
 import time
 from uuid import UUID
 from typing import Dict, List, Optional, Sequence, Callable, cast
-from oceandb import __version__
-import oceandb.errors as errors
-from oceandb.api import API
-from oceandb.db import DB
-from oceandb.api.types import (
+import pegasus.oceandb import __version__
+import pegasus.oceandb.errors as errors
+import pegasus.oceandb.api import API
+import pegasus.oceandb.db import DB
+import pegasus.oceandb.api.types import (
     Documents,
     Embeddings,
     GetResult,
@@ -17,12 +17,12 @@ from oceandb.api.types import (
     Where,
     WhereDocument,
 )
-from oceandb.api.models.Collection import Collection
+import pegasus.oceandb.api.models.Collection import Collection
 
 import re
 
-from oceandb.telemetry import Telemetry
-from oceandb.telemetry.events import CollectionAddEvent, CollectionDeleteEvent
+import pegasus.oceandb.telemetry import Telemetry
+import pegasus.oceandb.telemetry.events import CollectionAddEvent, CollectionDeleteEvent
 
 
 # mimics s3 bucket requirements for naming

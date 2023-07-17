@@ -1,7 +1,7 @@
-import oceandb
-from oceandb.api.types import QueryResult
-from oceandb.config import Settings
-import oceandb.server.fastapi
+import pegasus.oceandb
+import pegasus.oceandb.api.types import QueryResult
+import pegasus.oceandb.config import Settings
+import pegasus.oceandb.server.fastapi
 import pytest
 import tempfile
 import numpy as np

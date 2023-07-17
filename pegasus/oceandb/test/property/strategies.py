@@ -4,7 +4,7 @@ import hypothesis.strategies as st
 from typing import Optional, List, Dict, Union
 from typing_extensions import TypedDict
 import numpy as np
-import oceandb.api.types as types
+import pegasus.oceandb.api.types as types
 import re
 from hypothesis.strategies._internal.strategies import SearchStrategy
 from hypothesis.errors import InvalidDefinition

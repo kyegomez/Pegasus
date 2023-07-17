@@ -4,12 +4,12 @@ from typing import Generator, Callable
 from hypothesis import given
 import hypothesis.strategies as st
 import pytest
-import oceandb
-from oceandb.api import API
-from oceandb.config import Settings
-import oceandb.test.property.strategies as strategies
-import oceandb.test.property.invariants as invariants
-from oceandb.test.property.test_embeddings import (
+import pegasus.oceandb
+import pegasus.oceandb.api import API
+import pegasus.oceandb.config import Settings
+import pegasus.oceandb.test.property.strategies as strategies
+import pegasus.oceandb.test.property.invariants as invariants
+import pegasus.oceandb.test.property.test_embeddings import (
     EmbeddingStateMachine,
     EmbeddingStateMachineStates,
 )

@@ -1,8 +1,8 @@
 from hypothesis import given, settings, HealthCheck
-from oceandb.api import API
-from oceandb.errors import NoDatapointsException
-from oceandb.test.property import invariants
-import oceandb.test.property.strategies as strategies
+import pegasus.oceandb.api import API
+import pegasus.oceandb.errors import NoDatapointsException
+import pegasus.oceandb.test.property import invariants
+import pegasus.oceandb.test.property.strategies as strategies
 import hypothesis.strategies as st
 import logging
 import random

@@ -2,8 +2,8 @@ import unittest
 import os
 from unittest.mock import patch
 
-import oceandb
-import oceandb.config
+import pegasus.oceandb
+import pegasus.oceandb.config
 
 
 class GetDBTest(unittest.TestCase):

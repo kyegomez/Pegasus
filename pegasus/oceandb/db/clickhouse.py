@@ -1,5 +1,5 @@
 # type: ignore
-from oceandb.api.types import (
+import pegasus.oceandb.api.types import (
     Documents,
     Embeddings,
     IDs,
@@ -7,9 +7,9 @@ from oceandb.api.types import (
     Where,
     WhereDocument,
 )
-from oceandb.db import DB
-from oceandb.db.index.hnswlib import Hnswlib, delete_all_indexes
-from oceandb.errors import (
+import pegasus.oceandb.db import DB
+import pegasus.oceandb.db.index.hnswlib import Hnswlib, delete_all_indexes
+import pegasus.oceandb.errors import (
     NoDatapointsException,
 )
 import uuid

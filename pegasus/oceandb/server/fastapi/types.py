@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from typing import List, Union
-from oceandb.api.types import Include
+import pegasus.oceandb.api.types import Include
 
 
 # type supports single and batch mode

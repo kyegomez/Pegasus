@@ -1,9 +1,9 @@
 import pytest
 import hypothesis.strategies as st
 from hypothesis import given, settings
-from oceandb.api import API
-import oceandb.test.property.strategies as strategies
-import oceandb.test.property.invariants as invariants
+import pegasus.oceandb.api import API
+import pegasus.oceandb.test.property.strategies as strategies
+import pegasus.oceandb.test.property.invariants as invariants
 
 collection_st = st.shared(strategies.collections(with_hnsw_params=True), key="coll")
 

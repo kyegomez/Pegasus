@@ -37,7 +37,7 @@ def get_db(settings=__settings):
         require("clickhouse_port")
         require("persist_directory")
         logger.info("Using Clickhouse for database")
-        import oceandb.db.clickhouse
+        import pegasus.oceandb.db.clickhouse
 
         return oceandb.db.clickhouse.Clickhouse(settings)
     elif setting == "duckdb+parquet":
@@ -45,7 +45,7 @@ def get_db(settings=__settings):
         logger.warning(
             f"Using embedded DuckDB with persistence: data will be stored in: {settings.persist_directory}"
         )
-        import oceandb.db.duckdb
+        import pegasus.oceandb.db.duckdb
 
         return oceandb.db.duckdb.PersistentDuckDB(settings)
     elif setting == "duckdb":
@@ -53,7 +53,7 @@ def get_db(settings=__settings):
         logger.warning(
             "Using embedded DuckDB without persistence: data will be transient"
         )
-        import oceandb.db.duckdb
+        import pegasus.oceandb.db.duckdb
 
         return oceandb.db.duckdb.DuckDB(settings)
     else:
@@ -83,12 +83,12 @@ def Client(settings=__settings):
         logger.info(
             "Running Ocean in client mode using REST to connect to remote server"
         )
-        import oceandb.api.fastapi
+        import pegasus.oceandb.api.fastapi
 
         return oceandb.api.fastapi.FastAPI(settings, telemetry_client)
     elif setting == "local":
         logger.info("Running Ocean using direct local API.")
-        import oceandb.api.local
+        import pegasus.oceandb.api.local
 
         return oceandb.api.local.LocalAPI(settings, get_db(settings), telemetry_client)
     else:

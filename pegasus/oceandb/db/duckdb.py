@@ -1,5 +1,5 @@
-from oceandb.api.types import Documents, Embeddings, IDs, Metadatas
-from oceandb.db.clickhouse import (
+import pegasus.oceandb.api.types import Documents, Embeddings, IDs, Metadatas
+import pegasus.oceandb.db.clickhouse import (
     Clickhouse,
     db_array_schema_to_clickhouse_schema,
     EMBEDDING_TABLE_SCHEMA,

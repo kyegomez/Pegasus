@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import ClassVar
-from oceandb.telemetry import TelemetryEvent
+import pegasus.oceandb.telemetry import TelemetryEvent
 
 
 @dataclass

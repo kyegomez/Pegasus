@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from typing import Dict, List, Sequence, Optional, Tuple
 from uuid import UUID
 import numpy.typing as npt
-from oceandb.api.types import (
+import pegasus.oceandb.api.types import (
     Embeddings,
     Documents,
     IDs,

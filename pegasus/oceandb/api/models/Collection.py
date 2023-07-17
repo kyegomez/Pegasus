@@ -2,7 +2,7 @@ from typing import TYPE_CHECKING, Optional, cast, List, Dict, Tuple
 from pydantic import BaseModel, PrivateAttr
 from uuid import UUID
 
-from oceandb.api.types import (
+import pegasus.oceandb.api.types import (
     CrossModalRetrieval,
     Embedding,
     Include,
@@ -31,7 +31,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 if TYPE_CHECKING:
-    from oceandb.api import API
+    import pegasus.oceandb.api import API
 
 
 class Collection(BaseModel):
@@ -53,7 +53,7 @@ class Collection(BaseModel):
         if embedding_function is not None:
             self._embedding_function = embedding_function
         else:
-            import oceandb.utils.embedding_functions as ef
+            import pegasus.oceandb.utils.embedding_functions as ef
 
             logger.warning(
                 "No embedding_function provided, using default embedding function: SentenceTransformerEmbeddingFunction"

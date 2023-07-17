@@ -1,6 +1,6 @@
-import oceandb
-import oceandb.config
-from oceandb.server.fastapi import FastAPI
+import pegasus.oceandb
+import pegasus.oceandb.config
+import pegasus.oceandb.server.fastapi import FastAPI
 
 settings = oceandb.config.Settings()
 server = FastAPI(settings)

@@ -3,10 +3,10 @@ import pickle
 import time
 from typing import Dict
 
-from oceandb.api.types import IndexMetadata
+import pegasus.oceandb.api.types import IndexMetadata
 import hnswlib
-from oceandb.db.index import Index
-from oceandb.errors import (
+import pegasus.oceandb.db.index import Index
+import pegasus.oceandb.errors import (
     NoIndexException,
     InvalidDimensionException,
     NotEnoughElementsException,
