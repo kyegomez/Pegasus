@@ -6,7 +6,7 @@ import numpy as np
 from oceandb.utils.embedding_functions import ImageBindEmbeddingFunction
 
 
-memory = Memory("your_cache_directory", verbose=0)
+memory = Memory("PegasusStore", verbose=0)
 
 @memory.cache
 @njit
