@@ -35,6 +35,8 @@ Welcome to PegasusX, the latest and most advanced package for creating high-qual
 
 In essence, PegasusX is designed to transform the way we look at data. Our aim is to make it easier for anyone, regardless of their domain or discipline, to generate task-specific, high-quality embeddings from any type of data, be it text, image, video, audio, or even more complex data types..
 
+# Documentation
+* [Click here for documentation](DOCs/DOCUMENTATION.md)
 
 ## Installation
 
