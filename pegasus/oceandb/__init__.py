@@ -1,4 +1,4 @@
-import oceandb.config
+from . import config
 import logging
 from oceandb.telemetry.events import ClientStartEvent
 from oceandb.telemetry.posthog import Posthog
@@ -7,7 +7,7 @@ from oceandb.utils.embedding_functions import ImageBindEmbeddingFunction
 
 logger = logging.getLogger(__name__)
 
-__settings = oceandb.config.Settings()
+__settings = config.Settings()
 
 __version__ = "0.3.22"
 
@@ -15,7 +15,7 @@ __version__ = "0.3.22"
 def configure(**kwargs):
     """Override Ocean's default settings, environment variables or .env files"""
     global __settings
-    __settings = oceandb.config.Settings(**kwargs)
+    __settings = config.Settings(**kwargs)
 
 
 def get_settings():
