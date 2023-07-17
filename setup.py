@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
   name = 'pegasusX',
   packages = find_packages(exclude=[]),
-  version = '0.2.7',
+  version = '0.2.9',
   license='MIT',
   description = 'pegasus - Pytorch',
   author = 'Kye Gomez',
@@ -27,6 +27,7 @@ setup(
     'torchvision',
     'torchaudio',
     'timm==0.6.7',
+    'pytorchvideo',
     'ftfy',
     'regex',
     'einops',
