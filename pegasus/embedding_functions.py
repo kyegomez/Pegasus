@@ -1,10 +1,10 @@
-from oceandb.api.types import Documents, EmbeddingFunction, Embeddings
+from pegasus.types import Documents, EmbeddingFunction, Embeddings
 from typing import Optional
 import torch
 
-from .ImageBind.models import imagebind_model
-from .ImageBind.models.imagebind_model import ModalityType
-from .ImageBind.data import load_and_transform_text, load_and_transform_vision_data, load_and_transform_audio_data
+from pegasus.ImageBind.models import imagebind_model
+from pegasus.ImageBind.models.imagebind_model import ModalityType
+from pegasus.ImageBind.data import load_and_transform_text, load_and_transform_vision_data, load_and_transform_audio_data
 
 
 class MultiModalEmbeddingFunction(EmbeddingFunction):

@@ -1,1 +1,0 @@
-from pegasus.oceandb.utils.embedding_functions import MultiModalEmbeddingFunction
