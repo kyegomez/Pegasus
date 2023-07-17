@@ -1,3 +1,4 @@
+#pip install pegasusx
 from pegasus.main import Pegasus
 
 # # initialize with text modality
@@ -11,10 +12,30 @@ from pegasus.main import Pegasus
 # embeddings_audio = pegasus_audio.embed_audio(audio_data)
 
 
-# Using 4 processes
-pegasus = Pegasus(modality="text")
+# text
+pegasus = Pegasus(modality="text") #audio or vision
+
 text_data = ['This is a query about artificial intelligence', 
              'Another query about machine learning',
              'Yet another query about deep learning',
              'And one more about natural language processing']
 embeddings = pegasus.embed_data(text_data)
+print(embeddings)
+
+
+#audio 
+pegasus = Pegasus(modality="audio")
+
+audio_data = "./audio.mp3" #file path of your mpt3
+
+embeddings = pegasus.embed_data(audio_data)
+print(embeddings)
+
+#vision
+pegasus = Pegasus(modality="vision")
+
+vision_data = "stable-diffusion-xl.jpeg"
+
+embedding = pegasus.embed_data(vision_data)
+
+print(embedding)

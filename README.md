@@ -183,3 +183,16 @@ PegasusX is a constant work in progress, and we're always striving for better. O
 
 Thank you for considering contributing to PegasusX. Your expertise and commitment to this project are what make it thrive. Let's build the future of multimodal embeddings together.
 
+
+# Demo
+
+
+---
+
+# Demos
+
+## Swarm Video Demo {Click for more}
+
+[![Watch the swarm video](https://img.youtube.com/vi/V4JE5YBlkpU/maxresdefault.jpg)](https://youtu.be/V4JE5YBlkpU)
+
+----
