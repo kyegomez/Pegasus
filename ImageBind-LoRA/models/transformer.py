@@ -18,7 +18,6 @@ import torch
 import torch.nn as nn
 import torch.utils.checkpoint as checkpoint
 from timm.models.layers import DropPath, trunc_normal_
-from flash_attn.flash_attention import FlashMHA
 from flash_attn.flash_blocksparse_attention import FlashBlocksparseMHA
 
 class Attention(nn.Module):

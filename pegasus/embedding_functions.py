@@ -1,5 +1,4 @@
 from pegasus.types import Documents, EmbeddingFunction, Embeddings
-from typing import Optional
 import torch
 
 from pegasus.ImageBind import imagebind_model

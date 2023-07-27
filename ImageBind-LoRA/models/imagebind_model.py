@@ -8,7 +8,6 @@ import logging
 import os
 from functools import partial
 from types import SimpleNamespace
-from typing import Dict
 
 import torch
 import torch.nn as nn
@@ -23,7 +22,6 @@ from models.multimodal_preprocessors import (AudioPreprocessor,
                                              TextPreprocessor,
                                              ThermalPreprocessor)
 from models.transformer import MultiheadAttention, SimpleTransformer
-from flash_attn.flash_blocksparse_attention import FlashBlockSparseMHA
 ModalityType = SimpleNamespace(
     VISION="vision",
     TEXT="text",
