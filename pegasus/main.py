@@ -1,15 +1,9 @@
+import logging
 from concurrent.futures import ProcessPoolExecutor, as_completed
-# from numba import njit
-# from joblib import Memory
 
 import numpy as np
-from pegasus.embedding_functions import MultiModalEmbeddingFunction
-import logging
 
-#potential optimizationd
-# memory = Memory("PegasusStore", verbose=0)
-# @memory.cache
-# # @njit
+from pegasus.embedding_functions import MultiModalEmbeddingFunction
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)

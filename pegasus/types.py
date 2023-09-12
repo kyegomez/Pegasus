@@ -1,16 +1,12 @@
-from typing import Optional, Union, Dict, Sequence, TypeVar, List
-from typing_extensions import Literal, TypedDict, Protocol
-import pegasus.errors as errors
 from abc import ABC, abstractmethod
-
-# from ..utils.ImageBind.imagebind_model import ModalityType
-from pegasus.ImageBind import ModalityType
+from typing import Dict, List, Optional, Sequence, TypeVar, Union
 
 import numpy as np
-
-# use better cosine
 from sklearn.metrics.pairwise import cosine_similarity
+from typing_extensions import Literal, Protocol, TypedDict
 
+import pegasus.errors as errors
+from pegasus.ImageBind import ModalityType
 
 ID = str
 IDs = List[ID]

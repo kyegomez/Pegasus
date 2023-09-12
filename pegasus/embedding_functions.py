@@ -1,11 +1,15 @@
-from pegasus.types import Documents, EmbeddingFunction, Embeddings
+from concurrent.futures import ThreadPoolExecutor
+
 import torch
 
-from pegasus.ImageBind import imagebind_model
-from pegasus.ImageBind import ModalityType
-from pegasus.ImageBind import load_and_transform_text, load_and_transform_vision_data, load_and_transform_audio_data
-
-from concurrent.futures import ThreadPoolExecutor
+from pegasus.ImageBind import (
+    ModalityType,
+    imagebind_model,
+    load_and_transform_audio_data,
+    load_and_transform_text,
+    load_and_transform_vision_data,
+)
+from pegasus.types import Documents, EmbeddingFunction, Embeddings
 
 
 class MultiModalEmbeddingFunction(EmbeddingFunction):
@@ -74,6 +78,7 @@ audio_embedding_function = MultiModalEmbeddingFunction(modality=ModalityType.AUD
 
 import logging
 from concurrent.futures import ThreadPoolExecutor
+
 
 class OptimizedMultiModalEmbeddingFunction(EmbeddingFunction):
     """
