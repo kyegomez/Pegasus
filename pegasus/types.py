@@ -6,7 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from typing_extensions import Literal, Protocol, TypedDict
 
 import pegasus.errors as errors
-from pegasus.ImageBind import ModalityType
+from pegasus.ImageBind.models.imagebind_model import ModalityType
 
 ID = str
 IDs = List[ID]

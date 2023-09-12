@@ -5,6 +5,8 @@ import numpy as np
 
 from pegasus.embedding_functions import MultiModalEmbeddingFunction
 
+
+#logging
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -37,7 +39,14 @@ class Pegasus:
         multi_process: A boolean indicating if multiprocessing will be enabled
         n_processes: An integer indicating that the number of processes to use
     """
-    def __init__(self, modality, multi_process=False, n_processes=1, hosted=False):
+    def __init__(
+            self, 
+            modality, 
+            multi_process=False, 
+            n_processes=1, 
+            hosted=False
+        ):
+
         if not isinstance(modality, str) or modality not in {"text", "audio", "vision", "sensor", "heatmap"}:
             logger.error(f"Invalid modality: {modality}")
             raise ValueError("Invalid modality")
@@ -97,7 +106,9 @@ class Pegasus:
             try:
                 with ProcessPoolExecutor(max_workers=self.n_processes) as executor:
                     future_to_data = {executor.submit(self._embed_data, d): d for d in data}
-                    return {future_to_data[future]: future.result() for future in as_completed(future_to_data)}
+                    return {
+                        future_to_data[future]: future.result() for future in as_completed(future_to_data)
+                    }
             except Exception as e:
                 logger.error(f"Failed to embed data in parallel: {str(e)}")
                 raise

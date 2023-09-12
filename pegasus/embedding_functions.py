@@ -2,7 +2,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 import torch
 
-from pegasus.ImageBind import (
+from pegasus.ImageBind.models.imagebind_model import (
     ModalityType,
     imagebind_model,
     load_and_transform_audio_data,
