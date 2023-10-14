@@ -44,22 +44,8 @@ In essence, PegasusX is designed to transform the way we look at data. Our aim i
 
 ## Installation
 
-Sure, here is the modified section including installation instructions using `git clone`:
-
-# Git Clone Installation
-
-There are 2 methods of installation. Currently, we're experiencing some path errors with pip installation. For a smooth installation, we recommend using git clone:
-
 ```bash
-git clone https://github.com/kyegomez/Pegasus.git
-cd Pegasus
-pip install -r requirements.txt
-```
-
-To validate your installation, you can run the provided example:
-
-```bash
-python3 example.py
+pip install pegasus
 ```
 
 ## Usage

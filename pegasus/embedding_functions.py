@@ -19,7 +19,7 @@ class MultiModalEmbeddingFunction(EmbeddingFunction):
         self,
         modality: str = ModalityType,  # type: ignore
         model_path: str = "https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth",
-        device: str = "cuda:0"
+        device: str = "cuda:0",
     ):
         self._modality = modality
         self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -29,11 +29,7 @@ class MultiModalEmbeddingFunction(EmbeddingFunction):
 
     def __call__(self, *args: Documents) -> Embeddings:
         if self._modality == ModalityType.TEXT:
-            inputs = {
-                ModalityType.TEXT: load_and_transform_text(
-                    args[0], self.device
-                )
-            }
+            inputs = {ModalityType.TEXT: load_and_transform_text(args[0], self.device)}
             print("Inputs:", inputs)
         elif self._modality == ModalityType.VISION:
             inputs = {
@@ -43,16 +39,14 @@ class MultiModalEmbeddingFunction(EmbeddingFunction):
             }
         elif self._modality == ModalityType.AUDIO:
             inputs = {
-                ModalityType.AUDIO: load_and_transform_audio_data(
-                    args[0], self.device
-                )
+                ModalityType.AUDIO: load_and_transform_audio_data(args[0], self.device)
             }
         else:
             raise ValueError("Invalid modality specified")
 
         with torch.no_grad():
             embeddings = self._model(inputs)
-        
+
         print("Embeddings:", embeddings)
 
         # Convert the embeddings tensor to a NumPy array and then to a list of lists (embeddings)
@@ -74,7 +68,7 @@ audio_embedding_function = MultiModalEmbeddingFunction(modality=ModalityType.AUD
 
 """
 
-#ouptu to parquet?
+# ouptu to parquet?
 
 import logging
 from concurrent.futures import ThreadPoolExecutor
@@ -84,9 +78,15 @@ class OptimizedMultiModalEmbeddingFunction(EmbeddingFunction):
     """
     Class to handle multi-modal embeddings with error handling and logging.
     """
+
     _model_cache = {}
 
-    def __init__(self, modality: str = ModalityType, model_path: str = "https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth", device: str = "cuda:0"):
+    def __init__(
+        self,
+        modality: str = ModalityType,
+        model_path: str = "https://dl.fbaipublicfiles.com/imagebind/imagebind_huge.pth",
+        device: str = "cuda:0",
+    ):
         """
         Initialize the embedding function with specified modality and device.
         Args:
@@ -95,7 +95,9 @@ class OptimizedMultiModalEmbeddingFunction(EmbeddingFunction):
             device (str): The device to run the model on - 'cpu' or 'cuda'.
         """
         self._modality = modality
-        self.device = device if torch.cuda.is_available() and "cuda" in device else "cpu"
+        self.device = (
+            device if torch.cuda.is_available() and "cuda" in device else "cpu"
+        )
         self.model_path = model_path
 
     def _load_model(self):
@@ -122,7 +124,7 @@ class OptimizedMultiModalEmbeddingFunction(EmbeddingFunction):
         load_func = {
             ModalityType.TEXT: load_and_transform_text,
             ModalityType.VISION: load_and_transform_vision_data,
-            ModalityType.AUDIO: load_and_transform_audio_data
+            ModalityType.AUDIO: load_and_transform_audio_data,
         }.get(self._modality, None)
 
         if load_func is None:

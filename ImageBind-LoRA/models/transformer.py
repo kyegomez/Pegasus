@@ -20,6 +20,7 @@ import torch.utils.checkpoint as checkpoint
 from timm.models.layers import DropPath, trunc_normal_
 from flash_attn.flash_blocksparse_attention import FlashBlocksparseMHA
 
+
 class Attention(nn.Module):
     def __init__(
         self,
@@ -91,14 +92,10 @@ class Mlp(nn.Module):
         return x
 
 
-
-
-
-#v1
+# v1
 class MultiheadAttention(nn.MultiheadAttention):
     def forward(self, x: torch.Tensor, attn_mask: torch.Tensor):
         return super().forward(x, x, x, need_weights=False, attn_mask=attn_mask)[0]
-
 
 
 class MultiheadAttention(FlashBlocksparseMHA):
@@ -106,27 +103,38 @@ class MultiheadAttention(FlashBlocksparseMHA):
         return super().forward(x, x, x, need_weights=False, attn_mask=attn_mask)[0]
 
 
-
-#v3
+# v3
 class MultiheadAttention(nn.Module):
-    def __init__(self, embed_dim, num_heads, sparsity_config, bias=True, batch_first=True,
-                 attention_dropout=0.0, causal=False, max_seq_length=2048, **kwargs):
+    def __init__(
+        self,
+        embed_dim,
+        num_heads,
+        sparsity_config,
+        bias=True,
+        batch_first=True,
+        attention_dropout=0.0,
+        causal=False,
+        max_seq_length=2048,
+        **kwargs,
+    ):
         super().__init__()
-        self.flashblocksparse_mha = FlashBlocksparseMHA(embed_dim, num_heads, sparsity_config,
-                                                        bias=bias, batch_first=batch_first,
-                                                        attention_dropout=attention_dropout,
-                                                        causal=causal,
-                                                        max_seq_length=max_seq_length, **kwargs)
+        self.flashblocksparse_mha = FlashBlocksparseMHA(
+            embed_dim,
+            num_heads,
+            sparsity_config,
+            bias=bias,
+            batch_first=batch_first,
+            attention_dropout=attention_dropout,
+            causal=causal,
+            max_seq_length=max_seq_length,
+            **kwargs,
+        )
 
     def forward(self, x: torch.Tensor, attn_mask: torch.Tensor):
         # FlashBlocksparseMHA uses the same input for query, key, value, and attn_mask
-        return self.flashblocksparse_mha(x, x, x, attn_mask=attn_mask, key_padding_mask=None,
-                                         need_weights=False)[0]
-
-
-
-
-
+        return self.flashblocksparse_mha(
+            x, x, x, attn_mask=attn_mask, key_padding_mask=None, need_weights=False
+        )[0]
 
 
 class ViTAttention(Attention):
@@ -220,7 +228,9 @@ class SimpleTransformer(nn.Module):
         norm_layer: Callable = _LAYER_NORM,
         mlp_ratio: int = 4,
         ffn_dropout_rate: float = 0.0,
-        layer_scale_type: Optional[str] = None,  # from cait; possible values are None, "per_channel", "scalar"
+        layer_scale_type: Optional[
+            str
+        ] = None,  # from cait; possible values are None, "per_channel", "scalar"
         layer_scale_init_value: float = 1e-4,  # from cait; float
         weight_init_style: str = "jax",  # possible values jax or pytorch
     ):

@@ -12,16 +12,25 @@ from types import SimpleNamespace
 import torch
 import torch.nn as nn
 
-from models.helpers import (EinOpsRearrange, LearnableLogitScaling, Normalize,
-                            SelectElement, SelectEOSAndProject)
-from models.multimodal_preprocessors import (AudioPreprocessor,
-                                             IMUPreprocessor, PadIm2Video,
-                                             PatchEmbedGeneric,
-                                             RGBDTPreprocessor,
-                                             SpatioTemporalPosEmbeddingHelper,
-                                             TextPreprocessor,
-                                             ThermalPreprocessor)
+from models.helpers import (
+    EinOpsRearrange,
+    LearnableLogitScaling,
+    Normalize,
+    SelectElement,
+    SelectEOSAndProject,
+)
+from models.multimodal_preprocessors import (
+    AudioPreprocessor,
+    IMUPreprocessor,
+    PadIm2Video,
+    PatchEmbedGeneric,
+    RGBDTPreprocessor,
+    SpatioTemporalPosEmbeddingHelper,
+    TextPreprocessor,
+    ThermalPreprocessor,
+)
 from models.transformer import MultiheadAttention, SimpleTransformer
+
 ModalityType = SimpleNamespace(
     VISION="vision",
     TEXT="text",
@@ -293,16 +302,14 @@ class ImageBindModel(nn.Module):
                 num_blocks=num_blocks,
                 ffn_dropout_rate=0.0,
                 drop_path_rate=drop_path,
-
                 attn_target=partial(
-                    #v1
+                    # v1
                     MultiheadAttention,
                     embed_dim=embed_dim,
                     num_heads=num_heads,
                     bias=True,
                     add_bias_kv=add_bias_kv,
-
-                    #v2 flash attention blocksparse
+                    # v2 flash attention blocksparse
                     # FlashBlockSparseMHA(
                     # embed_dim=embed_dim,
                     # num_heads=num_heads,
@@ -310,7 +317,6 @@ class ImageBindModel(nn.Module):
                     # attn_mask=attn_mask,
                     # add_bias_kv=add_bias_kv,
                     # )
-
                 ),
                 pre_transformer_layer=nn.Sequential(
                     nn.LayerNorm(embed_dim, eps=1e-6)
@@ -516,23 +522,47 @@ def imagebind_huge(pretrained=False):
     return model
 
 
-def save_module(module_dict: nn.ModuleDict, module_name: str = "",
-                checkpoint_dir: str = "./.checkpoints/full", postfix: str = "_last",
-                extension: str = "pth"):
+def save_module(
+    module_dict: nn.ModuleDict,
+    module_name: str = "",
+    checkpoint_dir: str = "./.checkpoints/full",
+    postfix: str = "_last",
+    extension: str = "pth",
+):
     try:
-        torch.save(module_dict.state_dict(),
-                   os.path.join(checkpoint_dir, f"imagebind-{module_name}{postfix}.{extension}"))
+        torch.save(
+            module_dict.state_dict(),
+            os.path.join(
+                checkpoint_dir, f"imagebind-{module_name}{postfix}.{extension}"
+            ),
+        )
         logging.info(f"Saved parameters for module {module_name} to {checkpoint_dir}.")
     except FileNotFoundError:
-        logging.warning(f"Could not save module parameters for {module_name} to {checkpoint_dir}.")
+        logging.warning(
+            f"Could not save module parameters for {module_name} to {checkpoint_dir}."
+        )
 
 
-def load_module(module_dict: nn.ModuleDict, module_name: str = "",
-                checkpoint_dir: str = "./.checkpoints/full", postfix: str = "_last",
-                extension: str = "pth"):
+def load_module(
+    module_dict: nn.ModuleDict,
+    module_name: str = "",
+    checkpoint_dir: str = "./.checkpoints/full",
+    postfix: str = "_last",
+    extension: str = "pth",
+):
     try:
-        module_dict.load_state_dict(torch.load(
-                   os.path.join(checkpoint_dir, f"imagebind-{module_name}{postfix}.{extension}")), strict=False)
-        logging.info(f"Loaded parameters for module {module_name} from {checkpoint_dir}.")
+        module_dict.load_state_dict(
+            torch.load(
+                os.path.join(
+                    checkpoint_dir, f"imagebind-{module_name}{postfix}.{extension}"
+                )
+            ),
+            strict=False,
+        )
+        logging.info(
+            f"Loaded parameters for module {module_name} from {checkpoint_dir}."
+        )
     except FileNotFoundError:
-        logging.warning(f"Could not load module parameters for {module_name} from {checkpoint_dir}.")
+        logging.warning(
+            f"Could not load module parameters for {module_name} from {checkpoint_dir}."
+        )

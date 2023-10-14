@@ -101,7 +101,7 @@ def load_and_transform_vision_data(image_paths, device, to_tensor=True):
                     transforms.Resize(
                         224, interpolation=transforms.InterpolationMode.BICUBIC
                     ),
-                    transforms.CenterCrop(224)
+                    transforms.CenterCrop(224),
                 ]
             )
         with open(image_path, "rb") as fopen:
