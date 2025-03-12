@@ -3,12 +3,19 @@ from concurrent.futures import ThreadPoolExecutor
 import torch
 
 from pegasus.ImageBind.models.imagebind_model import (
-    ModalityType,
-    imagebind_model,
+    ModalityType
+)
+
+from pegasus.ImageBind.models import (
+    imagebind_model
+)
+
+from pegasus.ImageBind.data import (
     load_and_transform_audio_data,
     load_and_transform_text,
     load_and_transform_vision_data,
 )
+
 from pegasus.types import Documents, EmbeddingFunction, Embeddings
 
 
